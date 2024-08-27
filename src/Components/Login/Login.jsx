@@ -18,7 +18,7 @@ export default function Login() {
       localStorage.setItem('userToken', data.token)
       setUserData(data.token)
 
-      nav("/")
+      nav("/home")
     } catch (error) {
       console.log(error.response.data.message);
       setApierror(error.response.data.message);

@@ -20,7 +20,7 @@ export default function Register() {
       console.log(data);
       localStorage.setItem('userToken', data.token);
       setUserData(data.token)
-      nav("/")
+      nav("/home")
 
     } catch (err) {
       console.log(err.response.data.message);

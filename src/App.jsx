@@ -23,7 +23,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 let routers = createBrowserRouter([
   {
     path: '', element: <Layout />, children: [
-      { index: true, element: <ProductProtector><Home /></ProductProtector> },
+      { path: 'home', element: <ProductProtector><Home /></ProductProtector> },
       { path: 'cart', element: <ProductProtector><Cart /></ProductProtector> },
       { path: 'products', element: <ProductProtector><Products /></ProductProtector> },
       { path: 'ProductDetails/:id', element: <ProductProtector><ProductDetails /></ProductProtector> },
@@ -31,7 +31,7 @@ let routers = createBrowserRouter([
       { path: 'brands', element: <ProductProtector><Brands /></ProductProtector> },
       { path: 'checkout', element: <ProductProtector><Checkout /></ProductProtector> },
       { path: 'allorders', element: <ProductProtector><Allordars /></ProductProtector> },
-      { path: 'login', element: <Login /> },
+      { index: true, element: <Login /> },
       { path: 'register', element: <Register /> },
       { path: '*', element: <Notfound /> },
     ]
