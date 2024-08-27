@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.product:hover {
+    border: solid 1px green;
+    cursor: pointer;
+}
+
+.product .btn {
+    transition: all 0.5s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.product:hover .btn {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.rating-color {
+    color: yellow;
+}
