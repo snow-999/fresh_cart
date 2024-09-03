@@ -25,7 +25,7 @@ export default function Brands() {
       <i className="fas fa-spinner fa-spin fa-pulse text-4xl"></i>
     </div> : <div>
       <div className="flex w-3/4 mx-auto justify-center item-center flex-wrap">
-        {brands.map((brand, index) => <div key={index} className={`w-1/4 ${style.brand}`}>
+        {brands.map((brand, index) => <div key={index} className={`sm:w-full md:w-1/2 lg:w-1/4 ${style.brand}`}>
           <div className={`h-[300px] m-4 ${style.border}`}>
             <img className="w-full h-[250px]" src={brand.image} alt={brand.name} />
             <h2 className="my-3 text-main text-xl text-green-700 text-center">{brand.name}</h2>

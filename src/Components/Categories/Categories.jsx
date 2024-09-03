@@ -26,7 +26,7 @@ export default function Categories() {
       <i className="fas fa-spinner fa-spin fa-pulse text-4xl"></i>
     </div> : <div>
       <div className="flex w-3/4 mx-auto justify-center item-center flex-wrap">
-        {categories.map((category, index) => <div key={index} className={`w-1/4 ${style.cat}`}>
+        {categories.map((category, index) => <div key={index} className={`sm:w-full md:w-1/2 lg:w-1/4 ${style.cat}`}>
           <div className={`h-[300px] m-4 ${style.border}`}>
             <img className="w-full h-[250px]" src={category.image} alt={category.name} />
             <h2 className="my-3 text-main text-xl text-green-700 text-center">{category.name}</h2>
