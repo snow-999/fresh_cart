@@ -23,7 +23,7 @@ export default function RecentProduct() {
   return <>
     {!isLoading ? <div className='flex flex-wrap'>
       {data.map((product) => <div key={product.id} className='sm:w-full md:w-1/4 lg:w-1/5 product p-4'>
-        <Link to={`productDetails/${product.id}`}>
+        <Link to={`/productDetails/${product.id}`}>
           <img src={product?.imageCover} className='w-full' alt={product?.title} />
           <h2 className='text-sm'>{product.category?.name}</h2>
           <h2 className='text-sm'>{product?.title?.split(' ')?.slice(0, 2)?.join(' ')}</h2>

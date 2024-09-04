@@ -63,7 +63,7 @@ export default function Navbar() {
           </div>
           {navSlider && <div className='flex  flex-col items-center justify-center'>
             {userData && <ul className=' mt-4 w-full space-y-4 flex flex-col text-center items-center justify-center space-x-2'>
-              <li className='w-full'><NavLink to="">Home</NavLink></li>
+              <li className='w-full'><NavLink to="home">Home</NavLink></li>
               <li className='w-full'><NavLink to="products">products</NavLink></li>
               <li className='w-full'><NavLink to="categories">categories</NavLink></li>
               <li className='w-full'><NavLink to="brands">brands</NavLink></li>

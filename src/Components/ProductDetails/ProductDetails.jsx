@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import style from './ProductDetails.module.css'
+import { useContext, useEffect, useState } from 'react'
+// import style from './ProductDetails.module.css'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import Slider from "react-slick";
@@ -16,7 +16,32 @@ export default function ProductDetails() {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 2000
+    autoplaySpeed: 2000, responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
   const [productDetails, setProductDetails] = useState({});
   async function getProductsDetails(id) {
@@ -33,13 +58,13 @@ export default function ProductDetails() {
 
   return <>
 
-    <div className='flex items-center py-10'>
-      <div className='w-1/4'>
+    <div className='flex items-center flex-wrap py-10'>
+      <div className='w-full md:w-1/4'>
         <Slider {...settings}>
           {productDetails.images?.map((image, index) => <img key={index} src={image} alt={productDetails.title} className='w-full' />)}
         </Slider>
       </div>
-      <div className='w-3/4 p-3'>
+      <div className='w-full md:w-3/4 p-3'>
         <div>
           <h2>{productDetails.title}</h2>
           <h2>{productDetails.category?.name}</h2>
